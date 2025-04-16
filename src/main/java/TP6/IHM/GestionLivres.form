@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="TP6.IHM.GestionLivres">
+  <grid id="27dc6" binding="MainPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="759" height="746"/>
+    </constraints>
+    <properties>
+      <background color="-10197916"/>
+    </properties>
+    <border type="none" title=""/>
+    <children>
+      <grid id="c6348" binding="FormPanel" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="680ae" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <labelFor value="72739"/>
+              <text value="Date de production"/>
+            </properties>
+          </component>
+          <component id="d79fe" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Domaine:"/>
+            </properties>
+          </component>
+          <component id="54f6a" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="ISBNN"/>
+            </properties>
+          </component>
+          <component id="fa36b" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Titre"/>
+            </properties>
+          </component>
+          <component id="7e859" class="javax.swing.JTextField" binding="txt_titre">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="82773" class="javax.swing.JTextField" binding="txt_isbn">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="42d3c" class="javax.swing.JComboBox" binding="cbox_domain">
+            <constraints>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="Informatique"/>
+                <item value="industrie"/>
+                <item value="Comptabilité"/>
+                <item value="Mathematique"/>
+                <item value="Chimie"/>
+                <item value="Roman"/>
+                <item value="Management"/>
+              </model>
+            </properties>
+          </component>
+          <component id="e2628" class="javax.swing.JButton" binding="enregistrerButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="icons8-sauvegarder-24.png"/>
+              <text value="Enregistrer"/>
+            </properties>
+          </component>
+          <component id="6eb2f" class="javax.swing.JButton" binding="modifierButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="icons8-engrenage-16.png"/>
+              <text value="Modifier"/>
+            </properties>
+          </component>
+          <component id="d61f2" class="javax.swing.JButton" binding="supprimerButton" default-binding="true">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="icons8-supprimer-16.png"/>
+              <text value="Supprimer"/>
+            </properties>
+          </component>
+          <component id="b8be0" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Nom de l'auteur"/>
+            </properties>
+          </component>
+          <component id="13bb6" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Nombre d'exemplaires"/>
+            </properties>
+          </component>
+          <component id="e8bb9" class="javax.swing.JTextField" binding="txt_auteur">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="72739" class="javax.swing.JSpinner" binding="date_production">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <inheritsPopupMenu value="false"/>
+              <opaque value="false"/>
+            </properties>
+          </component>
+          <component id="1f2cd" class="javax.swing.JTextField" binding="txt_nbexmp">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="a88cf" class="javax.swing.JButton" binding="listesDesExemplairesButton" default-binding="true">
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Listes des exemplaires"/>
+            </properties>
+          </component>
+          <component id="22acf" class="javax.swing.JButton" binding="annulerButton" default-binding="true">
+            <constraints>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="icons8-annuler-16.png"/>
+              <text value="Annuler"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="6d435" binding="SearchPanel" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="edb59" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="ISBN:"/>
+            </properties>
+          </component>
+          <component id="d07be" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Nom de l'auteur"/>
+            </properties>
+          </component>
+          <component id="77a12" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Domaine:"/>
+            </properties>
+          </component>
+          <component id="5dd2" class="javax.swing.JComboBox" binding="rech_Domaine">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="Informatique"/>
+                <item value="industrie"/>
+                <item value="Comptabilité"/>
+                <item value="Mathematique"/>
+                <item value="Chimie"/>
+                <item value="Roman"/>
+                <item value="Management"/>
+              </model>
+            </properties>
+          </component>
+          <component id="44245" class="javax.swing.JButton" binding="RechercheISBNN">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="icons8-search-16.png"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="2a75b" class="javax.swing.JButton" binding="RechercheNom">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="icons8-search-16.png"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="c4f61" class="javax.swing.JButton" binding="RechercheDomaine">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="icons8-search-16.png"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="74d9b" class="javax.swing.JTextField" binding="rech_isbn">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="83032" class="javax.swing.JTextField" binding="rech_Nom">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="b1163" class="javax.swing.JButton" binding="afficherTous">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Afficher tous les livres"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="b7e03" binding="ListPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <scrollpane id="1878b">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="6432b" class="javax.swing.JTable" binding="Booklistes">
+                <constraints/>
+                <properties>
+                  <autoCreateRowSorter value="false"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
