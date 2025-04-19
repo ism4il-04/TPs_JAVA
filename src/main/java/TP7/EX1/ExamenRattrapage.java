@@ -1,4 +1,4 @@
-package TP7.EX5;
+package TP7.EX1;
 
 public class ExamenRattrapage extends Examen {
     private String forme;

@@ -1,10 +1,11 @@
-package TP7.EX5;
+package TP7.EX1;
 
 public class ExamenFinal extends Examen implements Comparable<ExamenFinal> {
     private int annee;
     private String heure;
-    public ExamenFinal(int numEnregistrement, float note, String profRespo, String matiere, String heure) throws NoteInvalide {
+    public ExamenFinal(int numEnregistrement, float note, String profRespo, String matiere,int annee, String heure) throws NoteInvalide {
         super(numEnregistrement, note, profRespo, matiere);
+        this.annee = annee;
         this.heure = heure;
     }
     public int getAnnee() {

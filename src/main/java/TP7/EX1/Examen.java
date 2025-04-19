@@ -1,4 +1,4 @@
-package TP7.EX5;
+package TP7.EX1;
 
 public abstract class Examen  {
     protected int numEnregistrement;
@@ -25,5 +25,5 @@ public abstract class Examen  {
         this.matiere = matiere;
     }
 
-    public void afficher() {};
+    public abstract void afficher();
 }
