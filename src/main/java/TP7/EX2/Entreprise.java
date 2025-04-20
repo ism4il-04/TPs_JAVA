@@ -23,5 +23,4 @@ public class Entreprise {
     public String getNom() {
         return nom;
     }
-
 }

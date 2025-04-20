@@ -1,7 +1,6 @@
 package TP7.EX2;
 
 public class Main {
-
     public static void infoEntreprises(Entreprise[] entreprises) {
         for (Entreprise entreprise : entreprises) {
             System.out.println("\nEntreprise: " + entreprise.nom);
