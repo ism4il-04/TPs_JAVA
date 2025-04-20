@@ -17,7 +17,7 @@ public abstract class Examen  {
     // constructeur
     public Examen(int numEnregistrement, float note, String profRespo, String matiere) throws NoteInvalide {
         if (note < 0 || note > 20) {
-            throw new NoteInvalide();
+            throw new NoteInvalide("note invalide");
         }
         this.numEnregistrement = numEnregistrement;
         this.note = note;

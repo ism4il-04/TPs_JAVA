@@ -23,7 +23,7 @@ public class ExamenFinal extends Examen implements Comparable<ExamenFinal> {
 
     @Override
     public void afficher() {
-        System.out.println("Examen de rattrapage numero: " + numEnregistrement+"note= "+note+"professeur responsable"+ profRespo+"matiere= "+matiere +"annee= "+annee+"heure= "+heure);
+        System.out.println("Examen de final numero: " + numEnregistrement+" note= "+note+" professeur responsable: "+ profRespo+" matiere= "+matiere +" annee= "+annee+" heure= "+heure);
     }
 
     @Override

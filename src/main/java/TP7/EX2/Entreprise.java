@@ -16,13 +16,12 @@ public class Entreprise {
     public String mission() throws SecretMissionException{
         return mission;
     }
-    public int capital() {
+    public int capital() throws NonProfitException {
         return capital;
     }
 
     public String getNom() {
         return nom;
     }
-
 
 }

@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class OperationPair {
-    public <U extends Comparable<U>> U getMax(Pair<U,U> P){
+    public static <U extends Comparable<U>> U getMax(Pair<U, U> P){
         U First=P.getFst();
         U Second=P.getSnd();
         if(First.compareTo(Second)>0){
@@ -29,10 +29,10 @@ public class OperationPair {
             }
         });
     }
-    public <U extends Number,V extends Number> Double Somme(Pair<U,V> P){
+    public static <U extends Number,V extends Number> Double Somme(Pair<U, V> P){
         return (P.getFst().doubleValue()+P.getSnd().doubleValue());
     }
-    public <U extends Number> double[] collectionToTableauV1(Collection<Pair<U,U>> liste){
+    public static <U extends Number> double[] collectionToTableauV1(Collection<Pair<U, U>> liste){
         double[] tableau=new double[liste.size()];
         int i = 0;
         for (Pair<U, U> p : liste) {
@@ -41,7 +41,7 @@ public class OperationPair {
         }
         return tableau;
     }
-    public <U extends Number,V extends Number> double[] collectionToTableauV2(Collection<Pair<U,V>> liste){
+    public static <U extends Number,V extends Number> double[] collectionToTableauV2(Collection<Pair<U, V>> liste){
         double[] tableau=new double[liste.size()];
         int i = 0;
         for (Pair<U, V> p : liste) {

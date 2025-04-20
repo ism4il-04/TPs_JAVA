@@ -18,6 +18,6 @@ public class ExamenRattrapage extends Examen {
 
     @Override
     public void afficher() {
-        System.out.println("Examen de rattrapage numero: " + numEnregistrement+"note= "+note+"professeur responsable"+ profRespo+"matiere= "+matiere +"forme= "+forme);
+        System.out.println("Examen de rattrapage numero: " + numEnregistrement+" note= "+note+" professeur responsable: "+ profRespo+" matiere= "+matiere +" forme= "+forme);
     }
 }

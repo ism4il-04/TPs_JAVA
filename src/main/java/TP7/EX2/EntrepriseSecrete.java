@@ -5,8 +5,10 @@ public class EntrepriseSecrete extends Entreprise {
         super(nombreEmployes, capital, nom, mission);
     }
 
-    @Override
     public String mission() throws SecretMissionException {
-        throw new SecretMissionException("cette entreprise est secrete.\n");
+        if (mission.equals("Entreprise Secrete")) {
+            throw new SecretMissionException("cette entreprise est secrete.");
+        }
+        return mission;
     }
 }

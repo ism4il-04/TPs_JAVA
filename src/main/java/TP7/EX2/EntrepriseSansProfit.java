@@ -6,8 +6,10 @@ public class EntrepriseSansProfit extends Entreprise {
         super(nombreEmployes, capital, nom, mission);
     }
 
-    @Override
     public int capital() throws NonProfitException {
-        throw new NonProfitException("cette entreprise n'a pas de profit.\n");
+        if (capital == 0){
+            throw new NonProfitException("cette entreprise n'a pas de profit.");
+        }
+        return capital;
     }
 }
