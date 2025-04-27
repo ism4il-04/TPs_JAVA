@@ -1,5 +1,6 @@
 package TP8.EX3;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -19,12 +20,22 @@ public class Etudiant {
     public void ajouterNote(String matiere,float note) {
         resultats.get(matiere).add(note);
     }
-    public void moyenneParMatiere(String matiere) {
+    public float moyenneParMatiere(String matiere) {
         float moyenne=0;
         for (float note : resultats.get(matiere)) {
             moyenne+=note;
         }
-        moyenne = moyenne / resultats.get(matiere).size();
+        return moyenne = moyenne / resultats.get(matiere).size();
     };
-    public void moyenneGenerale() {};
+    public float moyenneGenerale() {
+        float moyenne=0;
+        float sommeCoefs=0;
+        Iterator <String> it = resultats.keySet().iterator();
+        for (String matiere : resultats.keySet()) {
+            float coefCourant=formation.getMatiere(matiere);
+            moyenne+=coefCourant*moyenneParMatiere(matiere);
+            sommeCoefs+=coefCourant;
+        }
+        return moyenne / sommeCoefs;
+    }
 }
