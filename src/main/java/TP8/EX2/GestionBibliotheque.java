@@ -51,4 +51,30 @@ public class GestionBibliotheque {
         }
     }
 
+    public void rejoindreListeAttente (){
+        Scanner clavier = new Scanner(System.in);
+        System.out.print("Entrez le membre pour ajouter à la liste: ");
+        String membre = clavier.nextLine();
+        if (membres.contains(membre)) {
+            listeAttenteLivres.addLast(membre);
+        }else {
+            System.out.println("cette personne n'est pas membre");
+        }
+    }
+    public String preterLivre(){
+        Scanner clavier = new Scanner(System.in);
+        System.out.print("Entrez le membre pour ajouter à la liste: ");
+        String membre = clavier.nextLine();
+        if (listeAttenteLivres.contains(membre)) {
+            return listeAttenteLivres.removeFirst();
+        } else {
+            System.out.println("cette personne n'est pas dans la liste d'attente");
+            return null;
+        }
+    }
+    public void afficherListeAttente() {
+        for (String e : listeAttenteLivres) {
+            System.out.println(e);
+        }
+    }
 }
