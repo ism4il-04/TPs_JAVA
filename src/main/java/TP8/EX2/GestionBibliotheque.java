@@ -21,7 +21,6 @@ public class GestionBibliotheque {
         String auteur = clavier.nextLine();
         catalogue.put(titre, auteur);
     }
-
     public String trouverLivre() {
         Scanner clavier = new Scanner(System.in);
         System.out.print("Entrez titre du livre : ");
@@ -39,7 +38,6 @@ public class GestionBibliotheque {
             membres.add(membre);
         }
     }
-
     public void estMembre(){
         Scanner clavier = new Scanner(System.in);
         System.out.print("Entrez le membre : ");
