@@ -35,7 +35,7 @@ public class Etudiant {
         float moyenne=0;
         float sommeCoefs=0;
         for (String matiere : resultats.keySet()) {
-            float coefCourant=formation.getMatiere(matiere);
+            float coefCourant=formation.getMatiereCoef(matiere);
             moyenne+=coefCourant*moyenneParMatiere(matiere);
             sommeCoefs+=coefCourant;
         }
