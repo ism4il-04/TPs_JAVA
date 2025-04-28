@@ -7,13 +7,22 @@ public class Bibliotheque {
     private List<Document> documents;
     private List<Materiel> materiels;
 
-    public boolean addAdherent(){
-        return false;
+    public boolean addAdherent(Adherent adherent){
+        return adherents.add(adherent);
     };
-    public boolean addDocument(){
-        return false;
+    public boolean addDocument(Document document){
+        return documents.add(document);
     };
-    public boolean addMaterial(){
-        return false;
+    public boolean addMaterial(Materiel materiel){
+        return materiels.add(materiel);
     };
+
+    @Override
+    public String toString() {
+        return "Bibliotheque{" +
+                "adherents=" + adherents +
+                ", Documents=" + documents+
+                ", Materiels=" + materiels +
+                '}';
+    }
 }
