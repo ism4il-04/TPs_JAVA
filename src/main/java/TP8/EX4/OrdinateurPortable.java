@@ -2,7 +2,13 @@ package TP8.EX4;
 
 public class OrdinateurPortable extends Materiel implements Empruntable {
     private String marque;
-    Os os;
+    private Os os;
+
+    public OrdinateurPortable(boolean enPanne, String marque, Os os) {
+        super(enPanne);
+        this.marque = marque;
+        this.os = os;
+    }
 
     @Override
     public boolean isDisponible() {

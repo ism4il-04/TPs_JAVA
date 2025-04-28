@@ -9,6 +9,11 @@ public class Adherent {
     private Statut statut;
     List<Empruntable> empruntables= new ArrayList<Empruntable>(5);
 
+    public Adherent(String nom, String prenom, Statut statut) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.statut = statut;
+    }
 
 
 }

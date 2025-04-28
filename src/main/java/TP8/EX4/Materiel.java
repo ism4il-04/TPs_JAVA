@@ -1,7 +1,10 @@
 package TP8.EX4;
 
 public class Materiel {
-    private boolean enPanne;
+    protected boolean enPanne;
+    public Materiel(boolean enPanne) {
+        this.enPanne = enPanne;
+    }
 
     @Override
     public String toString() {
