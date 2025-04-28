@@ -13,35 +13,24 @@ public class GestionBibliotheque {
         listeAttenteLivres = new ArrayDeque<>();
     }
 
-    public void ajouterLivre(){
-        Scanner clavier = new Scanner(System.in);
-        System.out.print("Entrez le titre du livre : ");
-        String titre = clavier.nextLine();
-        System.out.print("Entrez l'auteur du livre : ");
-        String auteur = clavier.nextLine();
+    public void ajouterLivre(String titre, String auteur) {
         catalogue.put(titre, auteur);
+        System.out.println("Ajout de livre: " + titre + " par " + auteur + " a la bibliotheque.");
     }
-    public String trouverLivre() {
-        Scanner clavier = new Scanner(System.in);
-        System.out.print("Entrez titre du livre : ");
-        String titre = clavier.nextLine();
+    public String trouverAuteur(String titre) {
+        System.out.println("Recherche de l'auteur du livre: " + titre );
         return catalogue.getOrDefault(titre, "Livre Inconnu");
     }
 
-    public void inscrireMembre() {
-        Scanner clavier = new Scanner(System.in);
-        System.out.print("Entrez le membre : ");
-        String membre = clavier.nextLine();
+    public void inscrireMembre(String membre) {
         if (membres.contains(membre)) {
             System.out.println("Membre deja inscrit");
         } else {
+            System.out.println("Ajout de nouveau membre: " + membre + " a la bibliotheque.");
             membres.add(membre);
         }
     }
-    public void estMembre(){
-        Scanner clavier = new Scanner(System.in);
-        System.out.print("Entrez le membre : ");
-        String membre = clavier.nextLine();
+    public void estMembre(String membre){
         if (membres.contains(membre)) {
             System.out.println("Membre deja inscrit");
         } else {
@@ -49,30 +38,22 @@ public class GestionBibliotheque {
         }
     }
 
-    public void rejoindreListeAttente (){
-        Scanner clavier = new Scanner(System.in);
-        System.out.print("Entrez le membre pour ajouter à la liste: ");
-        String membre = clavier.nextLine();
+    public void rejoindreListeAttente (String membre){
         if (membres.contains(membre)) {
+            System.out.println("Ajout de membre: "+membre+" a la liste d'attente ");
             listeAttenteLivres.addLast(membre);
         }else {
-            System.out.println("cette personne n'est pas membre");
+            System.out.println("cette personne '"+membre+"' n'est pas membre");
         }
     }
     public String preterLivre(){
-        Scanner clavier = new Scanner(System.in);
-        System.out.print("Entrez le membre pour ajouter à la liste: ");
-        String membre = clavier.nextLine();
-        if (listeAttenteLivres.contains(membre)) {
             return listeAttenteLivres.removeFirst();
-        } else {
-            System.out.println("cette personne n'est pas dans la liste d'attente");
-            return null;
-        }
     }
     public void afficherListeAttente() {
+        System.out.println("\nListe d'attente:");
         for (String e : listeAttenteLivres) {
             System.out.println(e);
         }
+        System.out.println("fin liste d'attente\n");
     }
 }
