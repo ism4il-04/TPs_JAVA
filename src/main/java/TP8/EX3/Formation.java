@@ -17,7 +17,7 @@ public class Formation {
     public void supprimerMatiere(String nom) {
         matiere.remove(nom);
     }
-    public Float getMatiere(String nom) {
+    public Float getMatiereCoef(String nom) {
         return matiere.get(nom);
     }
 }
