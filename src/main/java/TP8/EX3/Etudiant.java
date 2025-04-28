@@ -11,6 +11,10 @@ public class Etudiant {
     private Formation formation;
     private Map<String, List<Float>> resultats;
 
+    public String getNom() {
+        return nom;
+    }
+
     public Etudiant(String NIP,String nom, String prenom) {
         this.NIP=NIP;
         this.nom=nom;
@@ -30,7 +34,6 @@ public class Etudiant {
     public float moyenneGenerale() {
         float moyenne=0;
         float sommeCoefs=0;
-        Iterator <String> it = resultats.keySet().iterator();
         for (String matiere : resultats.keySet()) {
             float coefCourant=formation.getMatiere(matiere);
             moyenne+=coefCourant*moyenneParMatiere(matiere);
