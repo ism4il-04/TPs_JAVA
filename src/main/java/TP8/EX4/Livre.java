@@ -14,5 +14,4 @@ public class Livre extends Volume implements Empruntable {
     public String toString() {
         return "Livre {titre=" + super.titre + ",auteur="+super.auteur+ "}";
     }
-
 }

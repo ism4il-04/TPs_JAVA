@@ -4,7 +4,7 @@ public class MainTest {
     public static void main(String[] args) {
         Bibliotheque bibliotheque = new Bibliotheque();
         bibliotheque.addAdherent(new Adherent("Lyamani","Ismail", Statut.ETUDIANT));
-        bibliotheque.addAdherent(new Adherent("El Bouhdidi", "Jaber", Statut.ENSEIGNANT));
+        bibliotheque.addAdherent(new Adherent("Kamali", "Nassim", Statut.ENSEIGNANT));
         bibliotheque.addDocument(new Livre("Boite à merveille", "Sefrioui"));
         bibliotheque.addDocument(new Livre("Antigone", "Hugo"));
         bibliotheque.addDocument(new Revue("Revue 1", 5));

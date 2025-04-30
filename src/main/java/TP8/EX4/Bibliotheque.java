@@ -14,12 +14,6 @@ public class Bibliotheque {
         this.materiels = new ArrayList<Materiel>();
     }
 
-    public Bibliotheque(List<Adherent> adherents, List<Document> documents, List<Materiel> materiels) {
-        this.adherents = adherents;
-        this.documents = documents;
-        this.materiels = materiels;
-    }
-
     public boolean addAdherent(Adherent adherent){
         return adherents.add(adherent);
     };
@@ -37,5 +31,11 @@ public class Bibliotheque {
                 ", Documents=" + documents+
                 ", Materiels=" + materiels +
                 '}';
+    }
+
+    public void afficherFonds(){
+        for (Document document: documents){
+            System.out.println(document.toString()+document);
+        }
     }
 }
