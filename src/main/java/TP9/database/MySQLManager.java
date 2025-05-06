@@ -1,5 +1,9 @@
 package TP9.database;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -8,6 +12,8 @@ import TP9.util.DBConfigLoader;
 public class MySQLManager implements DatabaseManager{
 
     Properties props = DBConfigLoader.chargeDBConfig(configPath, "mysql");
+    Connection connection;
+    Statement stm;
     String url = props.getProperty("url");
     String username = props.getProperty("user");
     String password = props.getProperty("password");
@@ -17,7 +23,13 @@ public class MySQLManager implements DatabaseManager{
 
     @Override
     public void connect() throws ConnectException {
-
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection= DriverManager.getConnection(url, username, password);
+            stm = connection.createStatement();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -2,12 +2,18 @@ package TP9.database;
 
 import TP9.util.DBConfigLoader;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
 public class SQLServerManager implements DatabaseManager{
     Properties props = DBConfigLoader.chargeDBConfig(configPath, "sqlserver");
+    Connection connection;
+    Statement stm;
     String url = props.getProperty("url");
     String username = props.getProperty("user");
     String password = props.getProperty("password");
@@ -17,7 +23,13 @@ public class SQLServerManager implements DatabaseManager{
 
     @Override
     public void connect() throws ConnectException {
-
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            connection= DriverManager.getConnection(url, username, password);
+            stm = connection.createStatement();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
