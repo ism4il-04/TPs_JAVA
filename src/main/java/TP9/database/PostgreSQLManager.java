@@ -1,12 +1,24 @@
 package TP9.database;
 
+import TP9.util.DBConfigLoader;
+
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 public class PostgreSQLManager implements DatabaseManager {
 
+    Properties props = DBConfigLoader.chargeDBConfig(configPath, "postgresql");
+    String url = props.getProperty("url");
+    String username = props.getProperty("user");
+    String password = props.getProperty("password");
+
+    public PostgreSQLManager() throws Exception {
+    }
+
     @Override
     public void connect() throws ConnectException {
+
 
     }
 
