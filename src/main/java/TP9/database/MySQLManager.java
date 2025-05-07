@@ -1,9 +1,6 @@
 package TP9.database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -48,17 +45,13 @@ public class MySQLManager implements DatabaseManager{
     }
 
     @Override
-    public int executeUpdate(String sql) throws DMLException {
-        return 0;
-    }
+    public int executeDML(String sql) throws DMLException {
+        try(Connection conn = DriverManager.getConnection(url, username, password);
+            Statement stmt = conn.createStatement()) {
+            return stmt.executeUpdate(sql);
 
-    @Override
-    public int executeInsert(String sql) throws DMLException {
-        return 0;
-    }
-
-    @Override
-    public int executeDelete(String sql) throws DMLException {
-        return 0;
+        } catch (SQLException e) {
+            throw new DMLException("Erreur DML");
+        }
     }
 }

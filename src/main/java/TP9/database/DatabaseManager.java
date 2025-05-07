@@ -9,7 +9,5 @@ public interface DatabaseManager {
     Statement connect() throws ConnectException;
     void disconnect() throws ConnectException;
     List<Map<String, Object>> executeQuery(String sql) throws DQLException;
-    int executeUpdate(String sql) throws DMLException;
-    int executeInsert(String sql) throws DMLException;
-    int executeDelete(String sql) throws DMLException;
+    int executeDML(String sql) throws DMLException;
 }
