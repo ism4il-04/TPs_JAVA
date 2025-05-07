@@ -22,19 +22,24 @@ public class MySQLManager implements DatabaseManager{
     }
 
     @Override
-    public void connect() throws ConnectException {
+    public Statement connect() throws ConnectException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection= DriverManager.getConnection(url, username, password);
             stm = connection.createStatement();
         } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new ConnectException("Erreur de connexion");
         }
+        return null;
     }
 
     @Override
     public void disconnect() throws ConnectException {
-
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            throw new ConnectException("Erreur de connexion");
+        }
     }
 
     @Override

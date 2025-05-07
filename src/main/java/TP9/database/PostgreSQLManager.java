@@ -23,19 +23,24 @@ public class PostgreSQLManager implements DatabaseManager {
     }
 
     @Override
-    public void connect() throws ConnectException {
+    public Statement connect() throws ConnectException {
         try {
             Class.forName("org.postgresql.Driver");
             connection= DriverManager.getConnection(url, username, password);
             stm = connection.createStatement();
+            return stm;
         } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new ConnectException("Erreur de connexion");
         }
     }
 
     @Override
     public void disconnect() throws ConnectException {
-
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            throw new ConnectException("Erreur de connexion");
+        }
     }
 
     @Override
