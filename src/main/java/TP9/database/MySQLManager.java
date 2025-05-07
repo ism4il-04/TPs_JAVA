@@ -41,6 +41,13 @@ public class MySQLManager implements DatabaseManager{
 
     @Override
     public List<Map<String, Object>> executeQuery(String sql) throws DQLException {
+        try (Connection conn = DriverManager.getConnection(url, username, password);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            // something
+        } catch (SQLException e){
+            throw new DQLException("Erreur de selection");
+        }
         return List.of();
     }
 
