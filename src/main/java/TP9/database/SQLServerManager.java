@@ -3,9 +3,7 @@ package TP9.database;
 import TP9.util.DBConfigLoader;
 
 import java.sql.*;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 public class SQLServerManager implements DatabaseManager{
     Properties props = DBConfigLoader.chargeDBConfig(configPath, "sqlserver");
@@ -41,14 +39,22 @@ public class SQLServerManager implements DatabaseManager{
 
     @Override
     public List<Map<String, Object>> executeQuery(String sql) throws DQLException {
+        List<Map<String, Object>> results = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection(url, username, password);
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
-            // something
+            ResultSetMetaData md = rs.getMetaData();
+            while (rs.next()) {
+                Map<String, Object> row = new HashMap<>();
+                for (int i = 1; i <= md.getColumnCount(); i++) {
+                    row.put(md.getColumnName(i), rs.getObject(i));
+                }
+                results.add(row);
+            }
         } catch (SQLException e){
             throw new DQLException("Erreur de selection");
         }
-        return List.of();
+        return results;
     }
 
     @Override
