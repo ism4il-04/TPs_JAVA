@@ -3,7 +3,9 @@ package TP9.database;
 import java.sql.*;
 import java.util.*;
 import TP9.util.DBConfigLoader;
+import lombok.Data;
 
+@Data
 public class MySQLManager implements DatabaseManager{
 
     Properties props = DBConfigLoader.chargeDBConfig(configPath, "mysql");
@@ -13,13 +15,11 @@ public class MySQLManager implements DatabaseManager{
     String username = props.getProperty("user");
     String password = props.getProperty("password");
 
-    public MySQLManager() throws Exception {
-    }
 
     @Override
     public Statement connect() throws ConnectException {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection= DriverManager.getConnection(url, username, password);
             stm = connection.createStatement();
         } catch (SQLException | ClassNotFoundException e) {

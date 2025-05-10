@@ -23,12 +23,12 @@ public class Adherent {
     public boolean emprunter(Empruntable e) {
 
 
-
+        return false;
     }
     public boolean rendre(Empruntable e) {
 
 
-
+        return false;
     }
 
     public void afficherEmprunts() {

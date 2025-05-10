@@ -1,10 +1,13 @@
 package TP9.database;
 
 import TP9.util.DBConfigLoader;
+import lombok.Data;
 
 import java.sql.*;
 import java.util.*;
 
+
+@Data
 public class SQLServerManager implements DatabaseManager{
     Properties props = DBConfigLoader.chargeDBConfig(configPath, "sqlserver");
     Connection connection;
@@ -13,8 +16,7 @@ public class SQLServerManager implements DatabaseManager{
     String username = props.getProperty("user");
     String password = props.getProperty("password");
 
-    public SQLServerManager() throws Exception {
-    }
+
 
     @Override
     public Statement connect() throws ConnectException {
@@ -59,7 +61,7 @@ public class SQLServerManager implements DatabaseManager{
 
     @Override
     public int executeDML(String sql) throws DMLException {
-        try(Connection conn = DriverManager.getConnection(url, username, password);
+        try(Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433/tp9", "Ismail_lenovo\\ismai", "");
             Statement stmt = conn.createStatement()) {
             return stmt.executeUpdate(sql);
 

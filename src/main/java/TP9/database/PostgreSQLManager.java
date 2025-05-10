@@ -1,10 +1,12 @@
 package TP9.database;
 
 import TP9.util.DBConfigLoader;
+import lombok.Data;
 
 import java.sql.*;
 import java.util.*;
 
+@Data
 public class PostgreSQLManager implements DatabaseManager {
 
     Properties props = DBConfigLoader.chargeDBConfig(configPath, "postgresql");
@@ -14,8 +16,7 @@ public class PostgreSQLManager implements DatabaseManager {
     String username = props.getProperty("user");
     String password = props.getProperty("password");
 
-    public PostgreSQLManager() throws Exception {
-    }
+
 
     @Override
     public Statement connect() throws ConnectException {
@@ -25,7 +26,7 @@ public class PostgreSQLManager implements DatabaseManager {
             stm = connection.createStatement();
             return stm;
         } catch (SQLException | ClassNotFoundException e) {
-            throw new ConnectException("Erreur de connexion");
+            throw new ConnectException("Erreur de connexion a la base de donnee");
         }
     }
 
