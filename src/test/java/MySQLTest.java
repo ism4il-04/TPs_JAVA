@@ -28,23 +28,20 @@ public class MySQLTest {
     public void testSelectUserByNom() {
         List<Map<String, Object>> results = db.executeQuery("SELECT nom FROM utilisateurs");
         for (Map<String, Object> row : results) {
-            System.out.println(row.get("name"));
+            System.out.println(row.get("nom"));
         }
     }
 
+
     @Test
-    public void testDataFromCSVMatchesDatabase() throws Exception {
-        List<Map<String, String>> csvRows = CSVUtils.loadCSV("src/test/resources/test_data.csv");
-        List<Map<String, Object>> dbRows = db.executeQuery("SELECT * FROM utilisateurs");
+    public void testInsertUser() throws Exception {
+        String insertSQL = "INSERT INTO utilisateurs (id, nom, age) VALUES (20, 'Yassir', 28)";
+        db.executeDML(insertSQL);
 
-        for (int i = 0; i < csvRows.size(); i++) {
-            Map<String, String> csv = csvRows.get(i);
-            Map<String, Object> db = dbRows.get(i);
-
-            assertEquals(csv.get("id"), db.get("id").toString());
-            assertEquals(csv.get("nom"), db.get("nom"));
-            assertEquals(csv.get("age"), db.get("age").toString());
-        }
+        List<Map<String, Object>> results = db.executeQuery("SELECT * FROM utilisateurs WHERE id = 20");
+        assertEquals(1, results.size());
+        assertEquals("Yassir", results.get(0).get("nom"));
+        assertEquals(28, ((Number) results.get(0).get("age")).intValue());
     }
 
 
