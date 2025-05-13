@@ -1,9 +1,10 @@
 package TP9.database;
 
-import java.sql.*;
-import java.util.*;
 import TP9.util.DBConfigLoader;
 import lombok.Data;
+
+import java.sql.*;
+import java.util.*;
 
 @Data
 public class MySQLManager implements DatabaseManager{
