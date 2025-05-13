@@ -61,7 +61,7 @@ public class SQLServerManager implements DatabaseManager{
 
     @Override
     public int executeDML(String sql) throws DMLException {
-        try(Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433/tp9", "Ismail_lenovo\\ismai", "");
+        try(Connection conn = DriverManager.getConnection(url,username,password);
             Statement stmt = conn.createStatement()) {
             return stmt.executeUpdate(sql);
 
